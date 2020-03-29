@@ -3,9 +3,7 @@
 </p>
 
 <div align="center">
-<p align="center">
-  <img width="50" height="50" src="https://user-images.githubusercontent.com/11319073/77856758-b52cc300-71cf-11ea-8ddc-fc8ef71bf3da.png">
-</p>
+
   
 #### Semana OmniStack 11.0 - RocketSeat 
 
