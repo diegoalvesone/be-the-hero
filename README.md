@@ -31,6 +31,7 @@
 * ReactJS
 * React Native
 * SQLite
+* Expo
 ## Rodando a aplicação:
 ### Após clonar ou fazer o download do repositório, realize as seguintes etapas:
 
@@ -41,6 +42,13 @@
 #### Front-end Web
 1. ` npm install ` para baixar todas as dependências necessárias.
 2. ` npm start ` para startar o servidor. 
+#### Mobile
+1. ` npm start ` para startar a aplicação
+## Deploy da aplicação na Web
+### Back-end
+1. [ Heroku ] (https://be-the-hero-end.herokuapp.com/)
+### Front-end
+1. [ Netlify ] (https://practical-neumann-7f568f.netlify.com/)
 <p align="center">
   <img width="50" height="50" src="https://user-images.githubusercontent.com/11319073/77856758-b52cc300-71cf-11ea-8ddc-fc8ef71bf3da.png">
 </p>
