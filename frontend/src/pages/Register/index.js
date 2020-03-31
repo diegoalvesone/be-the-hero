@@ -11,6 +11,7 @@ import logoImg from '../../assets/logo.svg'
 export default function Register() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [whatsapp, setWhatsapp] = useState('');
     const [city, setCity] = useState('');
     const [uf, setUf] = useState('');
@@ -22,6 +23,7 @@ export default function Register() {
         const data = {
             name,
             email,
+            password,
             whatsapp,
             city,
             uf,
@@ -30,7 +32,7 @@ export default function Register() {
         try {
             const response = await api.post('ongs', data);
 
-            alert(`Seu ID de acesso:${response.data.id}`);
+            alert(`ONG cadastrada com sucesso, e-mail de acesso: ${data.email}`);
             history.push('/');
 
         }
@@ -61,6 +63,10 @@ export default function Register() {
                     <input type="email" placeholder="Email"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
+                    />
+                    <input type="password" placeholder="Senha"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
                     />
                     <input placeholder="WhatsApp"
                     value={whatsapp}

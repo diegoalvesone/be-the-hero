@@ -13,21 +13,26 @@ import heroesImg from '../../assets/heroes.png'
 
 export default function Logon() {
     const [id, setId] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
     const history = useHistory();
 
     async function handleLogin(e) {
         e.preventDefault();
 
         try {
-            const response = await api.post('sessions', {id});
+            const response = await api.post('sessions', {id, email, password});
 
             localStorage.setItem('ongId', id);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
             localStorage.setItem('ongName', response.data.name);
             
             history.push('/profile');
         }
         catch (err) {
-            alert('Falha no Login, tente novamente!');
+            alert('E-mail ou senha incorreta, tente novamente!');
         }
     }
     return (
@@ -36,9 +41,13 @@ export default function Logon() {
                 <img src={logoImg} alt="Be the Hero"/>
                 <form onSubmit={handleLogin}>
                     <h1>Faça seu logon</h1>
-                    <input placeholder="Sua ID"
-                    value={id}
-                    onChange={e => setId(e.target.value)}
+                    <input placeholder="Seu e-mail"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    />
+                    <input type="password" placeholder="Sua senha"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
                     />
                     <button className="button" type="submit">Entrar</button>
 
