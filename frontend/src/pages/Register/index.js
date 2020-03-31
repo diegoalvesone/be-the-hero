@@ -30,7 +30,7 @@ export default function Register() {
         };
 
         try {
-            const response = await api.post('ongs', data);
+            await api.post('ongs', data);
 
             alert(`ONG cadastrada com sucesso, e-mail de acesso: ${data.email}`);
             history.push('/');

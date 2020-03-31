@@ -12,7 +12,6 @@ import logoImg from '../../assets/logo.svg'
 import heroesImg from '../../assets/heroes.png'
 
 export default function Logon() {
-    const [id, setId] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -22,9 +21,8 @@ export default function Logon() {
         e.preventDefault();
 
         try {
-            const response = await api.post('sessions', {id, email, password});
+            const response = await api.post('sessions', {email, password});
 
-            localStorage.setItem('ongId', id);
             localStorage.setItem('email', email);
             localStorage.setItem('password', password);
             localStorage.setItem('ongName', response.data.name);
